@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import './App.css';
 import Header from './components/header';
-import Home from './pages/Home/home';
-import { VaultAuth } from './pages/Login/vaultAuth';
+import Home from './pages/home';
+import { VaultAuth } from './pages/vaultAuth';
 import { ThemeContext } from './components/theme';
 
 function App() {
