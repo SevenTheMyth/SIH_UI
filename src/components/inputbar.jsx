@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { styled } from '@mui/system';
 import { TextField, Paper, IconButton, InputAdornment } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
@@ -14,12 +14,13 @@ const StyledTextField = styled(TextField)({
   '& input': {
     color: '#efefef',
     '&::placeholder': {
-      color: '#cecece',
+      color: '#fff',
     },
   },
 });
 
-const CustomInput = ({ placeholder = 'Search...', onSubmit }) => {
+const InputBar = ({ placeholder = 'Hello, I am Unity. Ask me anything regarding your database cluster.', onSubmit }) => {
+
   const handleSubmit = () => {
     if (onSubmit) {
       onSubmit();
@@ -29,6 +30,7 @@ const CustomInput = ({ placeholder = 'Search...', onSubmit }) => {
   return (
     <Paper
       sx={{
+        zIndex: '10',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
@@ -40,6 +42,7 @@ const CustomInput = ({ placeholder = 'Search...', onSubmit }) => {
         borderRadius: '20px',
         border: '1px solid rgba(255, 255, 255, 0.18)',
         color: '#efefef',
+        '&:hover': {border: 'none', borderBottom: '1px solid primary'}
       }}
     >
       <StyledTextField
@@ -58,4 +61,4 @@ const CustomInput = ({ placeholder = 'Search...', onSubmit }) => {
   );
 };
 
-export default CustomInput;
+export default InputBar;

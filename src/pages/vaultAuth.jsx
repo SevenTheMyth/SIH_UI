@@ -4,8 +4,10 @@ import AbcIcon from '@mui/icons-material/Abc';
 import {Button, Typography, IconButton, Stack, Grid, TextField, InputAdornment } from '@mui/material';
 import '../assets/css/vaultAuth.css';
 import image from "../assets/images/vault.png"
+import {useNavigate, Link} from "react-router-dom";
 
 export const VaultAuth = () => {
+    const navigate = useNavigate();
 
     return (
         <Grid id="page" conatiner xs={12} justifyContent="center" alignItems="center">
@@ -73,11 +75,14 @@ export const VaultAuth = () => {
                 </div>
 
                 <Grid container id="loginButton" alignItems="center" justifyContent="space-evenly">
-                    <Button variant="contained" sx={{ width: '125px',background: "rgba( 50, 50, 55, 0.25 )", 
-                    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )", backdropFilter: "blur( 4px )", 
-                    borderRadius: "4px", border: "1px solid rgba( 255, 255, 255, 0.075 )" }}>
-                    Authenticate
-                    </Button>
+                    <Link to="/home" style={{ textDecoration: "none" }}>
+                        <Button variant="contained" sx={{ width: '200px',background: "rgba( 50, 50, 55, 0.25 )", 
+                        boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )", backdropFilter: "blur( 4px )", 
+                        borderRadius: "4px", border: "1px solid rgba( 255, 255, 255, 0.075 )" }}
+                        onClick={navigate('/home')}>
+                        Connect to Vault
+                        </Button>
+                    </Link>
                 </Grid>
 
                 </Grid>

@@ -5,7 +5,8 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ThemeContext } from "./theme";
-import logo from '../assets/logo/aicte-logo.png';
+import logoLight from '../assets/logo/logo-light.png';
+import logoDark from '../assets/logo/logo-dark.png';
 import "../App.css";
 
 const Header = () => {
@@ -13,9 +14,9 @@ const Header = () => {
 
     const getColor = () => {
       if (theme === 'dark-theme')
-        return {fontFamily: 'Impact' , fontWeight: '1000', fontSize: '28px', color: '#efefef',}
+        return {fontFamily: 'Pacifico' , fontWeight: '1000', fontSize: '28px', color: '#efefef',}
       else 
-        return {color: "yellow"}; 
+        return {color: "black"}; 
     };
 
     return (
@@ -25,7 +26,7 @@ const Header = () => {
           <Typography variant="h5" color={getColor} component="div" sx={{fontFamily: 'Pacifico', fontWeight: '1000', fontSize: '28px'}}>
             unifieDB
           </Typography>
-          <img src={logo} alt="AICTE Logo" width='100px' height='auto' />
+          <img src={theme === 'dark-theme'? logoDark: logoLight} alt="AICTE Logo" width='auto' height='50px' />
           <Stack flexDirection="row" alignItems="center" justifyContent="space-between" gap={2}>
             <DarkModeSwitch
                 checked={theme === 'dark-theme'}
