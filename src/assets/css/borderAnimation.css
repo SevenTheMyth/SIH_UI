@@ -1,0 +1,42 @@
+/* animation.css */
+
+.card {
+	height: 60vh;
+	aspect-ratio: 1 / 1.5;
+	background: #052b2f;
+	border-radius: 0.5rem;
+	position: relative;
+  }
+  
+  .card::before,
+  .card::after {
+	content: "";
+	position: absolute;
+	inset: -0.5rem;
+	z-index: -1;
+	background: conic-gradient(
+	  from var(--gradient-angle),
+	  #0e4b50,
+	  #2d8f85,
+	  #637c54,
+	  #2d8f85,
+	  #0e4b50
+	);
+	border-radius: inherit;
+	
+	animation: rotation 20s linear infinite;
+  }
+  
+  .card::after {
+	filter: blur(3.5rem);
+  }
+  
+  @keyframes rotation {
+	0% {
+	  --gradient-angle: 0deg;
+	}
+	100% {
+	  --gradient-angle: 360deg;
+	}
+  }
+  

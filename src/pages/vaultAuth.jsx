@@ -1,15 +1,18 @@
 import React, {useState} from "react";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import AbcIcon from '@mui/icons-material/Abc';
-import {Button, Typography, IconButton, Stack, Grid, TextField, InputAdornment } from '@mui/material';
+import {Box, Button, Typography, IconButton, Stack, Grid, TextField, InputAdornment } from '@mui/material';
 import '../assets/css/vaultAuth.css';
 import image from "../assets/images/vault.png"
 import {useNavigate, Link} from "react-router-dom";
+import Header from "../components/header";
 
 export const VaultAuth = () => {
     const navigate = useNavigate();
 
     return (
+        <div className="mainContainer" id="mainContainer">
+        <div className="background" id="background"></div>
         <Grid id="page" conatiner xs={12} justifyContent="center" alignItems="center">
             <Grid id="container" container xs={12}>
                 <Grid id="imgGrid" container xs={7}>
@@ -88,6 +91,7 @@ export const VaultAuth = () => {
                 </Grid>
             </Grid>
         </Grid>
+        </div>
     )   
 };
 
